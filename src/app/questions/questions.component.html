@@ -1,0 +1,13 @@
+<!-- <h2>{{ question.description | uppercase }} Details</h2>
+<div><span>id: </span>{{question.id}}</div>
+<div><span>name: </span>{{question.description}}</div> -->
+
+<ul class="questions">
+  <li *ngFor="let question of questions">
+    <a routerLink="/detail/{{question.id}}">
+      <span class="badge">{{ question.id }}</span> {{ question.description }}
+    </a>
+  </li>
+</ul>
+
+<!-- <app-question-detail [question]="selectedQuestion"></app-question-detail> -->

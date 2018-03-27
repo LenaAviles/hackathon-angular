@@ -1,0 +1,90 @@
+<form name="questionForm" class="questionForm">
+  <p-panel class="ui-g-11 ui-g-nopad" header="Новая Консультация">
+    <div class="ui-g">
+      <div class="ui-g-12 anonymously">
+        <p-checkbox [(ngModel)]="anonymously" binary="true" name="anonymously" label="Анонимно"></p-checkbox>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <label>Подробно опишите вашу проблему</label>
+        <textarea pInputTextarea [(ngModel)]="description" name="description" autoResize="true" placeholder="Пример. У меня насморк и болит голова в течении двух дней..."
+          required="true">
+        </textarea>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <label>Определите категорию вопроса</label>
+        <p-dropdown [options]="categories" [(ngModel)]="selectedCategory" name="category" placeholder="Определите категорию" required="true"></p-dropdown>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12 ui-g ui-g-nopad">
+        <div class="ui-g-6 ui-g age">
+          <div class="ui-g-6">
+            <label for="age">Возраст</label>
+          </div>
+          <div class="ui-g-6">
+            <input pInputText type="number" id="age" [style]="{'width':'100%'}" value="25">
+          </div>
+        </div>
+        <div class="ui-g-6 ui-g ui-g-nopad gender">
+          <div class="ui-g-6 ui-g-nopad">
+            <p-radioButton name="gender" value="Female" label="Жен" [(ngModel)]="selectedGender"></p-radioButton>
+          </div>
+          <div class="ui-g-6 ui-g-nopad">
+            <p-radioButton name="gender" value="Male" label="Муж" [(ngModel)]="selectedGender"></p-radioButton>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12 ui-g-nopad">
+        <p-fieldset legend="Результаты исследований" [toggleable]="true" [collapsed]="true">
+
+          <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" multiple="multiple" accept="image/*" maxFileSize="1000000" [showCancelButton]="''">
+            <ng-template pTemplate="content">
+              <ul *ngIf="uploadedFiles.length">
+                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+              </ul>
+            </ng-template>
+          </p-fileUpload>
+
+        </p-fieldset>
+      </div>
+    </div>
+
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <label>Выбирите врача</label>
+        <p-dropdown [options]="doctors" [(ngModel)]="selectedDoctor" [style]="{'width':'100%'}" name="doctors" filter="true">
+          <ng-template let-item pTemplate="selectedItem">
+            <img src="{{item.photo}}" style="width:16px;vertical-align:middle" />
+            <span style="vertical-align:middle">{{item.label}}</span>
+          </ng-template>
+          <ng-template let-doctor pTemplate="item">
+            <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+              <img src="{{doctor.photo}}" style="width:24px;position:absolute;top:1px;left:5px" />
+              <div style="font-size:14px;float:right;margin-top:4px">{{doctor.label}}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>        
+      </div>
+    </div>
+
+    <div class="ui-g">
+      <div class="ui-g-12 askButton">
+        <button pButton type="button" (click)="visibleSidebar = true" icon="fa-question" label="Добавить вопрос"></button>
+      </div>
+    </div>
+
+  </p-panel>
+</form>
+
+<p-sidebar [(visible)]="visibleSidebar" position="bottom" [baseZIndex]="10000">
+  <h3 style="font-weight:normal">Ваш вопрос добавлен.</h3>
+  <p>Ответы врачей будут приходить к вам на e-mail</p>
+  <button pButton type="button" (click)="visibleSidebar4 = false" label="Save" class="ui-button-success"></button>
+  <button pButton type="button" (click)="visibleSidebar4 = false" label="Cancel" class="ui-button-secondary"></button>
+</p-sidebar>

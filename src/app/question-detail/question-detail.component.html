@@ -1,0 +1,11 @@
+<div *ngIf="question">
+  <h2>{{ question.description | uppercase }} Details</h2>
+  <div>
+    <span>id: </span>{{question.id}}</div>
+  <div>
+    <label>description:
+      <input [(ngModel)]="question.description" placeholder="description">
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>

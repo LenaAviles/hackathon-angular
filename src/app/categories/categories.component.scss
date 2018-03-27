@@ -1,0 +1,22 @@
+.category {
+  text-align: center;
+  color: #eee;
+  height: 100px;
+  width: 100%;
+  background-color: #607D8B;
+  border-radius: 2px;
+  display: table;
+  padding: 16px;
+
+  &:hover {
+    background-color: #EEE;
+    cursor: pointer;
+    color: #607d8b;
+  }
+}
+
+.category__name {
+  display: table-cell;
+  margin: 0;
+  vertical-align: middle;  
+}
