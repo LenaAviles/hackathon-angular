@@ -1,13 +1,22 @@
-<!-- <h2>{{ question.description | uppercase }} Details</h2>
-<div><span>id: </span>{{question.id}}</div>
-<div><span>name: </span>{{question.description}}</div> -->
+<div class="ui-g-12">
+  <ul class="questions">
+    <li *ngFor="let question of questions">
+      <a routerLink="/detail/{{question.id}}">
+        <p-panel>
+          <p-header>
+            <div class="ui-helper-clearfix">
+              <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">{{ question.category }}</span>
 
-<ul class="questions">
-  <li *ngFor="let question of questions">
-    <a routerLink="/detail/{{question.id}}">
-      <span class="badge">{{ question.id }}</span> {{ question.description }}
-    </a>
-  </li>
-</ul>
-
-<!-- <app-question-detail [question]="selectedQuestion"></app-question-detail> -->
+              <span class="ui-panel-title" style="font-size:12px;display:inline-block;margin-top:2px;right:2px">{{ question.date | date }}</span>
+            </div>
+          </p-header>
+          {{ question.description }}
+          <p-footer>
+            <!-- <button pButton type="button" icon="fa-list" label="View" class="ui-button-success"></button> -->
+          </p-footer>
+        </p-panel>
+        <!-- <span class="badge">{{ question.id }}</span> {{ question.description }} -->
+      </a>
+    </li>
+  </ul>
+</div>

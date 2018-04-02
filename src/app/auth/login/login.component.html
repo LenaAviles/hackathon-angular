@@ -1,5 +1,27 @@
 <div class="ui-g-11">
     <p>Please login.</p>
-    <button (click)="loginGoogle()">Login with Google</button>
+    <form class="ui-g-11" [formGroup]="loginForm" (submit)="onSubmit()">              
+        <div class="form-group ui-g-12">
+          <label for="email">Email</label>
+          <input pInputText type="text" id="email" formControlName="email" />
+          <div class="error" *ngIf="isControlInvalid('email')">
+            Это поле обязательное
+          </div>
+        </div>
+
+        <div class="form-group ui-g-12">
+            <label for="password">Пароль</label>
+            <input pInputText type="text" id="password" formControlName="password" />
+            <div class="error" *ngIf="isControlInvalid('password')">
+              Это поле обязательное
+            </div>
+          </div>
+
+        <div class="ui-g-6">
+            <button pButton class="ui-button-success" type="submit" label="Войти"></button>
+          </div>
+        </form>
+    
+    <button pButton type="button" icon="fa-google" (click)="loginGoogle()" label="Login with Google"></button>
 </div>
 

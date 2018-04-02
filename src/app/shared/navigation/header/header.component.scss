@@ -5,7 +5,8 @@
     top: 0px;
     left: 0;
     z-index: 99;
-    width: 100%;      
+    width: 100%;  
+    padding: 0 2em 0 0;    
   }
   
   .logo {    
@@ -18,7 +19,7 @@
   }
 
   .hero-photo {
-    width: 45px;
+    width: 40px;
     border-radius: 50%;
     border: 2px solid #607D8B;
     float: right;  
@@ -32,7 +33,7 @@
   nav a {
     padding: 5px 0;
     text-decoration: none;
-    margin-top: 5px;
+    margin-top: 7px;
     display: inline-block;    
     border-radius: 4px;    
   }

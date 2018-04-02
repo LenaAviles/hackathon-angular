@@ -29,7 +29,7 @@ export class AuthService {
             });
     }
 
-    signup(authData: AuthData) {
+    login(authData: AuthData) {
         this.afAuth.auth
             .signInWithEmailAndPassword(authData.email, authData.password)
             .then(result => {                
