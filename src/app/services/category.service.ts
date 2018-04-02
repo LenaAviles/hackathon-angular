@@ -13,4 +13,8 @@ export class CategoryService {
     return of(CATEGORIES);
   }
 
+  getCategoryById(id: string): Category {
+    return CATEGORIES.find(x => x.id === id);
+  }
+
 }

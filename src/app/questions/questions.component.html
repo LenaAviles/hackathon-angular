@@ -5,13 +5,14 @@
         <p-panel>
           <p-header>
             <div class="ui-helper-clearfix">
-              <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">{{ question.category }}</span>
+              <!-- <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">{{ question.category }}</span> -->
 
               <span class="ui-panel-title" style="font-size:12px;display:inline-block;margin-top:2px;right:2px">{{ question.date | date }}</span>
             </div>
           </p-header>
           {{ question.description }}
           <p-footer>
+              <p class="category-name">{{ question.category }}</p>
             <!-- <button pButton type="button" icon="fa-list" label="View" class="ui-button-success"></button> -->
           </p-footer>
         </p-panel>

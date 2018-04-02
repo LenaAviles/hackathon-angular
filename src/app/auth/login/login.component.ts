@@ -20,13 +20,10 @@ export class LoginComponent implements OnInit {
   loginGoogle() {
     this.authService.loginGoogle();
   }
-  logout() {
-    this.authService.logout();
-  }
-
+  
   ngOnInit() {
     this.authSubscription = this.authService.authChange.subscribe(authStatus => {
-      this.isAuth = authStatus;
+      this.isAuth = authStatus;      
     });
     this.loginFormInit();
   }

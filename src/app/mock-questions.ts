@@ -5,7 +5,7 @@ export const QUESTIONS: Question[] = [
         id: 0,
         description: 'question 0',
         anonymously: true,
-        category: 'Pregnancy',
+        category: "1",
         date: new Date(),    
         test: 'blood',
         user: 'Lena'
@@ -14,7 +14,7 @@ export const QUESTIONS: Question[] = [
         id: 1,
         description: 'question 1',
         anonymously: true,
-        category: 'Pregnancy',
+        category: "1",
         date: new Date(),    
         test: 'blood',
         user: 'Lena'
@@ -23,7 +23,7 @@ export const QUESTIONS: Question[] = [
         id: 2,
         description: 'question 2',
         anonymously: true,
-        category: 'Pregnancy',
+        category: "1",
         date: new Date(),    
         test: 'blood',
         user: 'Lena'
@@ -32,7 +32,7 @@ export const QUESTIONS: Question[] = [
         id: 3,
         description: 'question 3',
         anonymously: true,
-        category: 'Pregnancy',
+        category: '2',
         date: new Date(),    
         test: 'blood',
         user: 'Lena'
@@ -41,7 +41,7 @@ export const QUESTIONS: Question[] = [
         id: 4,
         description: 'question 4',
         anonymously: true,
-        category: 'Pregnancy',
+        category: '2',
         date: new Date(),    
         test: 'blood',
         user: 'Lena'
@@ -50,7 +50,7 @@ export const QUESTIONS: Question[] = [
         id: 5,
         description: 'question 5',
         anonymously: true,
-        category: 'Pregnancy',
+        category: '2',
         date: new Date(),    
         test: 'blood',
         user: 'Lena'
