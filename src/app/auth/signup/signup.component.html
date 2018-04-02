@@ -1,0 +1,74 @@
+<form class="ui-g-11" [formGroup]="signupForm" (submit)="onSubmit()">
+  <div class="form-group ui-g-12">
+    <label for="name">Имя</label>
+    <input pInputText type="text" id="name" formControlName="name" />
+    <div class="error" *ngIf="isControlInvalid('name')">
+      Имя должно состоять только из украинских букв
+    </div>
+  </div>
+
+  <div class="form-group ui-g-12">
+    <label for="email">Email</label>
+    <input pInputText type="text" id="email" formControlName="email" />
+    <div class="error" *ngIf="isControlInvalid('email')">
+      Неправильный формат email
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="ui-g-6 ui-sm-12">
+      <label for="password">Пароль пользователя:</label>
+      <input type="text" pInputText id="password" formControlName="password" />
+      <div class="error" *ngIf="signupForm.get('password').getError('invalidPassword') && signupForm.get('password').touched">
+        {{signupForm.get('password').getError('invalidPassword')}}
+      </div>
+    </div>
+    <div class="ui-g-6 ui-sm-12">
+      <label for="confirmPassword">Введите пароль еще раз:</label>
+      <input type="text" pInputText id="confirmPassword" formControlName="confirmPassword" />
+      <div class="error" *ngIf="isControlInvalid('email')">
+        Пароль не совпадает
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group ui-g-12">
+    <label for="photo">Фото</label>
+    <input pInputText type="text" id="photo" formControlName="photo" />
+  </div>
+
+  <div class="form-group ui-g-12 ui-md-6">
+    <p-dropdown [options]="genders" formControlName="gender" [autoWidth]="false"></p-dropdown>
+    <div class="error" *ngIf="isControlInvalid('gender')">
+      Это поле обязательное
+    </div>
+  </div>
+
+  <div class="form-group ui-g-12 ui-md-6">
+    <label for="dateOfBirth">Дата рождения:</label>
+    <p-calendar id="dateOfBirth" formControlName="dateOfBirth" [showIcon]="true"></p-calendar>
+    <div class="error" *ngIf="isControlInvalid('gender')">
+      Это поле обязательное
+    </div>
+  </div>
+
+  <div class="ui-g-12">
+    <p-checkbox binary="true" name="doctor" label="Зарегестрироваться как доктор" (click)="onSelect()"></p-checkbox>
+  </div>
+
+  <div class="form-group" *ngIf="doctor">
+    <div class="ui-g-12">
+      <label for="speciality">Специальность:</label>
+      <input type="text" pInputText id="speciality" formControlName="speciality" />
+    </div>
+    <div class="ui-g-12">
+      <label for="division">Место работы:</label>
+      <input type="text" pInputText id="division" formControlName="division" />
+    </div>
+  </div>
+
+  <div class="ui-g-6">
+    <button pButton class="ui-button-success" type="submit" label="Регистрация"></button>
+  </div>
+</form>
+

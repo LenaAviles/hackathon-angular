@@ -1,0 +1,48 @@
+#header {
+    background-color: #F0F3F5;
+    height: 60px;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 99;
+    width: 100%;      
+  }
+  
+  .logo {    
+    height: 2.5rem;      
+  }
+  
+  #notifications {
+    color: blue;
+    float: right;
+  }
+
+  .hero-photo {
+    width: 45px;
+    border-radius: 50%;
+    border: 2px solid #607D8B;
+    float: right;  
+    margin-left: .5em;  
+  }
+
+  .login {    
+    text-align: right;          
+  }
+
+  nav a {
+    padding: 5px 0;
+    text-decoration: none;
+    margin-top: 5px;
+    display: inline-block;    
+    border-radius: 4px;    
+  }
+  nav a:visited, a:link {
+    color: #607D8B;
+  }
+  nav a:hover {
+    color: #039be5;
+    background-color: #CFD8DC;
+  }
+  nav a.active {
+    color: #039be5;
+  }

@@ -1,4 +1,4 @@
-<form name="questionForm" class="questionForm">
+<form name="questionForm" class="questionForm" (submit)="onSubmit()">
   <p-panel class="ui-g-11 ui-g-nopad" header="Новая Консультация">
     <div class="ui-g">
       <div class="ui-g-12 anonymously">
@@ -46,7 +46,7 @@
           <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" multiple="multiple" accept="image/*" maxFileSize="1000000" [showCancelButton]="''">
             <ng-template pTemplate="content">
               <ul *ngIf="uploadedFiles.length">
-                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                <li *ngFor="let file of uploadedFiles">{{file.name}}</li>
               </ul>
             </ng-template>
           </p-fileUpload>
@@ -74,8 +74,8 @@
     </div>
 
     <div class="ui-g">
-      <div class="ui-g-12 askButton">
-        <button pButton type="button" (click)="visibleSidebar = true" icon="fa-question" label="Добавить вопрос"></button>
+      <div class="ui-g-12 submitButton">
+        <button pButton type="submit" (click)="visibleSidebar = true" icon="fa-question" label="Добавить вопрос"></button>
       </div>
     </div>
 
@@ -84,7 +84,6 @@
 
 <p-sidebar [(visible)]="visibleSidebar" position="bottom" [baseZIndex]="10000">
   <h3 style="font-weight:normal">Ваш вопрос добавлен.</h3>
-  <p>Ответы врачей будут приходить к вам на e-mail</p>
-  <button pButton type="button" (click)="visibleSidebar4 = false" label="Save" class="ui-button-success"></button>
+  <p>Ответы врачей будут приходить к вам на e-mail</p>  
   <button pButton type="button" (click)="visibleSidebar4 = false" label="Cancel" class="ui-button-secondary"></button>
 </p-sidebar>

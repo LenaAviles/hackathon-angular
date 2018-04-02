@@ -23,6 +23,13 @@ export class MenuComponent implements OnInit {
           { label: 'Questions', icon: 'fa-question', routerLink: ['/questions'] },
         ]
       },
+      {
+        label: 'Login', icon: 'fa-lock', items: [
+          { label: 'Войти', icon: 'fa-unlock-alt', routerLink: ['/login'] },          
+          { label: 'Выйти', icon: 'fa-lock', routerLink: ['/login'] },
+          { label: 'Регистрация', icon: 'fa-unlock-alt', routerLink: ['/signup'] },
+        ]
+      },
     ]
   }
 }

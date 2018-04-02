@@ -40,6 +40,7 @@ export class AddQuestionComponent implements OnInit {
     this.selectedGender = "Female";
     this.getCategories();
     this.getDoctors();
+    this.selectedDoctor = this.doctors[0];
   }
 
   getCategories(): void {
@@ -70,6 +71,10 @@ export class AddQuestionComponent implements OnInit {
 
     this.msgs = [];
     this.msgs.push({severity: 'info', summary: 'File Uploaded', detail: ''});
+}
+
+onSubmit(e) {
+  console.log(this);
 }
 
 }

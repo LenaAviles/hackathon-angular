@@ -3,5 +3,6 @@ export class Doctor {
     region: string;
     name: string;
     speciality: string;
+    division: string;
     photo: string;    
 }
