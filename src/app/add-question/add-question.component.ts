@@ -85,8 +85,6 @@ onSubmit(e) {
     date: new Date(),
     test: 'some tests',    
   }
-  console.log(this);
-  console.log(question);
   this.questionService.addDataToDatabase(question);
 }
 

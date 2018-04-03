@@ -1,7 +1,9 @@
 <div *ngIf="question">
   <h2>{{ question.description | uppercase }} Details</h2>
   <div>
-    <span>id: </span>{{question.id}}</div>
+    <span>date: </span>{{question.date | date}}
+    <span>category: </span>{{question.category}}
+  </div>
   <div>
     <label>description:
       <input [(ngModel)]="question.description" placeholder="description">
