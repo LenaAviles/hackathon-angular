@@ -7,18 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-// import { PrimengModule } from './primeng.module';
-import { FieldsetModule } from 'primeng/fieldset';
-import { CheckboxModule } from 'primeng/checkbox';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { DropdownModule } from 'primeng/dropdown';
-import { InputTextModule } from 'primeng/inputtext';
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { FileUploadModule } from 'primeng/fileupload';
-import { SidebarModule } from 'primeng/sidebar';
-import { PanelModule } from 'primeng/panel';
-import { MenubarModule } from 'primeng/menubar';
-import { CalendarModule } from 'primeng/calendar';
+import { PrimengModule } from './primeng.module';
 
 import { QuestionService } from './services/question.service';
 import { CategoryService } from './services/category.service';
@@ -60,18 +49,7 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,  
-    // PrimengModule,
-    FieldsetModule,
-    CheckboxModule,
-    InputTextareaModule,
-    DropdownModule,
-    InputTextModule,
-    RadioButtonModule,
-    FileUploadModule,
-    SidebarModule,
-    MenubarModule,
-    PanelModule, 
-    CalendarModule,  
+    PrimengModule,    
   ],
   providers: [QuestionService, CategoryService, DoctorService, AuthService],
   bootstrap: [AppComponent],

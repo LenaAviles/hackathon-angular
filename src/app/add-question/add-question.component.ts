@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../services/category.service';
 import { Message } from "primeng/components/common/api";
 import { DoctorService } from '../services/doctor.service';
+import { Question } from '../question';
+import { AuthService } from '../auth/auth.service';
+import { QuestionService } from '../services/question.service';
 
 
 interface Category {
@@ -33,7 +36,8 @@ export class AddQuestionComponent implements OnInit {
   selectedDoctor: Doctor;
 
   constructor(private categoryService: CategoryService,
-              private doctorService: DoctorService) { }
+              private doctorService: DoctorService,              
+              private questionService: QuestionService) { }
 
   ngOnInit() {
     this.anonymously = true;    
@@ -74,7 +78,16 @@ export class AddQuestionComponent implements OnInit {
 }
 
 onSubmit(e) {
+  let question = {    
+    description: this.description,
+    anonymously: this.anonymously,
+    category: this.selectedCategory,
+    date: new Date(),
+    test: 'some tests',    
+  }
   console.log(this);
+  console.log(question);
+  this.questionService.addDataToDatabase(question);
 }
 
 }

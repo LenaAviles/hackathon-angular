@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA  } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FieldsetModule } from 'primeng/fieldset';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextareaModule } from 'primeng/inputtextarea';
@@ -39,7 +39,6 @@ import { CalendarModule } from 'primeng/calendar';
     PanelModule,
     CalendarModule,
   ],
-  declarations: [],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]  
+  declarations: [],   
 })
 export class PrimengModule { }
