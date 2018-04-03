@@ -50,8 +50,7 @@ export class AuthService {
         });
       }
 
-    logout() {
-        // this.trainingService.cancelSubscriptions();
+    logout() {        
         this.afAuth.auth.signOut();
         this.authChange.next(false);
         this.router.navigate(['/login']);

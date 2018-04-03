@@ -6,11 +6,12 @@ import { QuestionDetailComponent }  from './question-detail/question-detail.comp
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/categories', pathMatch: 'full' },
   { path: 'questions', component: QuestionsComponent },
-  { path: 'add-question', component: AddQuestionComponent },
+  { path: 'add-question', component: AddQuestionComponent, canActivate: [AuthGuard] },
   { path: 'categories', component: CategoriesComponent },
   { path: 'detail/:id', component: QuestionDetailComponent },
   { path: 'login', component: LoginComponent },
@@ -20,5 +21,6 @@ const routes: Routes = [
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ],
+  providers: [ AuthGuard ]
 })
 export class AppRoutingModule {}
